@@ -118,7 +118,7 @@
 ## 🗂️ Структура репозитория (monorepo)
 
 ```
-cryptodash/
+crypto-dash/
 ├── django_app/             # Django SPA + OAuth
 ├── fastapi_service/        # FastAPI gateway
 ├── worker/                 # Celery воркеры
