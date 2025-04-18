@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:13.0-alpine
+    restart: on-failure
+    env_file:
+      - ../.env
+    volumes:
+      - ../database/postgresql/init_schema.sql:/docker-entrypoint-initdb.d/init_schema.sql
+    ports:
+      - "5432:5432"
+
+  django_app:
+    container_name: django_app
+    build: ../django_app
+    restart: always
+    env_file:
+      - ../.env
